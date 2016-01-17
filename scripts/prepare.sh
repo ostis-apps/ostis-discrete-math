@@ -67,7 +67,7 @@ cp -f ../config/server.conf ../sc-web/server/
 
 stage "Build knowledge base"
 
-rm -rf kb/menu
-rm ims.ostis.kb/ui/ui_start_sc_element.scs
+rm -rf ../kb/menu
+rm ../ims.ostis.kb/ui/ui_start_sc_element.scs
 
 ./build_kb.sh
