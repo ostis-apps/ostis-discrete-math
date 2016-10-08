@@ -31,7 +31,7 @@ clone_project()
 
 stage "Clone projects"
 
-clone_project https://github.com/ShunkevichDV/sc-machine.git sc-machine master
+clone_project https://github.com/deniskoronchik/sc-machine.git sc-machine master
 clone_project https://github.com/blrB/sc-web-tg.git sc-web master
 clone_project https://github.com/ShunkevichDV/ims.ostis.kb.git ims.ostis.kb master
 clone_project https://github.com/KovalM/sc-agents_for_TG kb/sc-agents_for_TG master
@@ -48,8 +48,6 @@ prepare()
 prepare "sc-machine"
 cd ../sc-machine/scripts
 ./install_deps_ubuntu.sh
-
-sudo apt-get install redis-server
 
 ./clean_all.sh
 ./make_all.sh
