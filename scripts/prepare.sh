@@ -34,6 +34,7 @@ stage "Clone projects"
 clone_project https://github.com/deniskoronchik/sc-machine.git sc-machine master
 clone_project https://github.com/blrB/sc-web-tg.git sc-web master
 clone_project https://github.com/ShunkevichDV/ims.ostis.kb.git ims.ostis.kb master
+clone_project https://github.com/PtaxaMagic/gt.ostis-Drawings.git gt.ostis-Drawings master
 clone_project https://github.com/KovalM/sc-agents_for_TG kb/sc-agents_for_TG master
 clone_project https://github.com/KovalM/gt_knowledge_base kb/gt_knowledge_base master
 clone_project https://github.com/blrB/tg_book kb/tg_book master
@@ -52,6 +53,13 @@ cd ../sc-machine/scripts
 ./clean_all.sh
 ./make_all.sh
 cd -
+
+prepare "gt.ostis-Drawings"
+cp -r ../gt.ostis-Drawings/kb/graph_drawings/ ../kb/
+rsync --recursive ../gt.ostis-Drawings/sc-web/ ../sc-web/
+cat ../gt.ostis-Drawings/files_for_addition/add_to_common.html>>../sc-web/client/templates/common.html
+cat ../gt.ostis-Drawings/files_for_addition/add_to_components.html>>../sc-web/client/templates/components.html
+rm -rf ../gt.ostis-Drawings
 
 prepare "sc-web"
 sudo apt-get install python-dev # required for numpy module
