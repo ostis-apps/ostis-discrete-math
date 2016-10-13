@@ -32,7 +32,7 @@ clone_project()
 stage "Clone projects"
 
 clone_project https://github.com/deniskoronchik/sc-machine.git sc-machine master
-clone_project https://github.com/blrB/sc-web-tg.git sc-web master
+clone_project https://github.com/Ivan-Zhukau/sc-web.git sc-web master
 clone_project https://github.com/ShunkevichDV/ims.ostis.kb.git ims.ostis.kb master
 clone_project https://github.com/PtaxaMagic/gt.ostis-Drawings.git gt.ostis-Drawings master
 clone_project https://github.com/KovalM/sc-agents_for_TG kb/sc-agents_for_TG master
