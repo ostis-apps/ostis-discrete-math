@@ -54,13 +54,6 @@ cd ../sc-machine/scripts
 ./make_all.sh
 cd -
 
-prepare "gt.ostis-Drawings"
-cp -r ../gt.ostis-Drawings/kb/graph_drawings/ ../kb/
-rsync --recursive ../gt.ostis-Drawings/sc-web/ ../sc-web/
-cat ../gt.ostis-Drawings/files_for_addition/add_to_common.html>>../sc-web/client/templates/common.html
-cat ../gt.ostis-Drawings/files_for_addition/add_to_components.html>>../sc-web/client/templates/components.html
-rm -rf ../gt.ostis-Drawings
-
 prepare "sc-web"
 sudo apt-get install python-dev # required for numpy module
 cd ../sc-web/scripts
