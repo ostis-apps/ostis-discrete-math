@@ -23,6 +23,10 @@ jsx_path=$sc_web_static_path/$jsx_graph_path
 
 stage "Build component"
 
+cd $base_path
+python build_components.py -a -i
+cd -
+
 cp -r ../gt.ostis-Drawings/kb/graph_drawings/ ../kb/
 
 stage "Copy common libraries"
