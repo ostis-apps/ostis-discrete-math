@@ -29,14 +29,6 @@ cd -
 
 cp -r ../gt.ostis-Drawings/kb/graph_drawings/ ../kb/
 
-stage "Copy common libraries"
-if [ ! -d "$jsx_path" ]; then
-    mkdir $jsx_path
-fi
-
-cp -fv $base_path/client/static/common/jsxgraph/jsxgraphcore.js $jsx_path/
-cp -fv $base_path/client/static/common/jsxgraph/jsxgraphsrc.js $jsx_path/
-
 append_line()
 {
     if grep -Fxq "$3" $1
@@ -60,19 +52,15 @@ append_css()
     append_line $1 $2 "<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/$2\" />"
 }
 
-stage "Install common libraries"
-
-append_js $sc_web_path/templates/common.html $jsx_graph_path/jsxgraphcore.js
-append_js $sc_web_path/templates/common.html $jsx_graph_path/jsxgraphsrc.js
 
 stage "Copy component"
 
-cp -Rfv $base_path/components/drawings/static/* $sc_web_static_path
+cp -Rfv $base_path/components/scgg/static/* $sc_web_static_path
 
 stage "Install component"
 
-append_js $sc_web_path/templates/components.html components/js/drawings/drawings.js
-append_css $sc_web_path/templates/components.html components/css/drawings.css
+append_js $sc_web_path/templates/components.html components/js/scgg/scgg.js
+append_css $sc_web_path/templates/components.html components/css/scgg.css
 
 prepare "sc-web"
 cd ../sc-web/scripts
