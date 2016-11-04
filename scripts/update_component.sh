@@ -62,8 +62,4 @@ stage "Install component"
 append_js $sc_web_path/templates/components.html components/js/scgg/scgg.js
 append_css $sc_web_path/templates/components.html components/css/scgg.css
 
-prepare "sc-web"
-cd ../sc-web/scripts
-./install_deps_ubuntu.sh
-./prepare_js.sh
-python build_components.py -i -a
+./prepare_web.sh
