@@ -15,7 +15,7 @@ stage()
     echo -en $green"[$st]$rst" $blue"$1...\n"$rst
 }
 
-base_path=../gt.ostis-Drawings/sc-web
+base_path=../gt-ostis-drawings/sc-web
 sc_web_path=../sc-web/client
 sc_web_static_path=$sc_web_path/static
 jsx_graph_path=common/jsxgraph
@@ -27,7 +27,7 @@ cd $base_path
 python build_components.py -a -i
 cd -
 
-cp -r ../gt.ostis-Drawings/kb/graph_drawings/ ../kb/
+cp -r ../gt-ostis-drawings/kb/graph_drawings/ ../kb/
 
 append_line()
 {
