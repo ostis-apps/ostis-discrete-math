@@ -31,13 +31,13 @@ clone_project()
 
 stage "Clone projects"
 
-clone_project https://github.com/deniskoronchik/sc-machine.git sc-machine master
+clone_project https://github.com/deniskoronchik/sc-machine.git sc-machine 25270c4
 clone_project https://github.com/Ivan-Zhukau/sc-web.git sc-web master
 clone_project https://github.com/ShunkevichDV/ims.ostis.kb.git ims.ostis.kb master
-clone_project https://github.com/KovalM/gt-ostis-drawings.git gt-ostis-drawings master
-clone_project https://github.com/KovalM/gt-knowledge-processing-machine.git master
-clone_project https://github.com/KovalM/gt-knowledge-base.git master
-clone_project https://github.com/KovalM/gt-book.git master
+clone_project https://github.com/gt-ostis-dev/gt-ostis-drawings.git gt-ostis-drawings master
+clone_project https://github.com/gt-ostis-dev/gt-knowledge-processing-machine.git master
+clone_project https://github.com/gt-ostis-dev/gt-knowledge-base.git master
+clone_project https://github.com/gt-ostis-dev/gt-book.git master  ter
 
 stage "Prepare projects"
 
