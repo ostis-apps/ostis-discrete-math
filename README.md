@@ -4,13 +4,13 @@
 
 ## Components
 
-<a href="https://github.com/KovalM/gt_knowledge_base">Knowledge base</a>
+<a href="https://github.com/gt-ostis-dev/gt-knowledge-base">Knowledge base</a>
 
-<a href="https://github.com/KovalM/sc-agents_for_TG">Solver</a>
+<a href="https://github.com/gt-ostis-dev/gt-knowledge-processing-machine">Solver</a>
 
-<a href="https://github.com/blrB/tg_book">Graph Theory Book</a>
+<a href="https://github.com/gt-ostis-dev/gt-book">Graph Theory Book</a>
 
-<a href="https://github.com/PtaxaMagic/gt.ostis-Drawings">Graph editor</a>
+<a href="https://github.com/gt-ostis-dev/gt-ostis-drawings">Graph editor</a>
 
 ## Installation
 
