@@ -74,4 +74,6 @@ rm ../ims.ostis.kb/ui/ui_start_sc_element.scs
 
 ./update_component.sh $st
 
+./install_scn_editor.sh
+
 ./build_kb.sh
