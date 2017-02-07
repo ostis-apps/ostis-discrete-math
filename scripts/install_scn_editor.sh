@@ -2,7 +2,7 @@
 #rst="\e[0m"     # Text reset
 
 # https://github.com/ShunkevichDV/ostis/blob/master/scripts/install_scn.sh
- 
+./install_scn_editor_dependence.sh 
 
 cd ../
 if [ -d web-scn-editor/ ]; then
