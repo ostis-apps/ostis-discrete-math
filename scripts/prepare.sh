@@ -71,9 +71,8 @@ stage "Build knowledge base"
 rm -rf ../kb/menu
 rm ../ims.ostis.kb/ui/ui_start_sc_element.scs
 
+./install_scn_editor.sh
 
 ./update_component.sh $st
-
-./install_scn_editor.sh
 
 ./build_kb.sh

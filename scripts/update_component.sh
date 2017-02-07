@@ -62,4 +62,4 @@ stage "Install component"
 append_js $sc_web_path/templates/components.html components/js/scgg/scgg.js
 append_css $sc_web_path/templates/components.html components/css/scgg.css
 
-./prepare_web.sh
+#./prepare_web.sh

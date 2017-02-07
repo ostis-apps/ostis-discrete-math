@@ -2,25 +2,16 @@
 #rst="\e[0m"     # Text reset
 
 # https://github.com/ShunkevichDV/ostis/blob/master/scripts/install_scn.sh
-# -------------------------------------------------  
-    sudo apt-get update
-    sudo apt-get install nodejs
-    sudo apt-get install npm
-    sudo npm cache clean -f
-    sudo npm install -g n
-    sudo n stable
-    echo "Installing grunt"
-    sudo npm install -g grunt-cli
-# -------------------------------------------------  
+ 
 
-    cd ../
-    if [ -d web-scn-editor/ ]; then
-    echo 'Web-scn-editor already cloned, i will delete it.'
-    rm -rf web-scn-editor/
+cd ../
+if [ -d web-scn-editor/ ]; then
+echo 'Web-scn-editor already cloned, i will delete it.'
+rm -rf web-scn-editor/
 fi
-    git clone https://bitbucket.org/iit-ims-team/web-scn-editor
-    cd scripts/
-    cd ../
+git clone https://bitbucket.org/iit-ims-team/web-scn-editor
+cd scripts/
+cd ../
 
 cd sc-web
 echo "var scWebPath = '">../text1.txt
