@@ -38,6 +38,7 @@ clone_project https://github.com/gt-ostis-dev/gt-ostis-drawings.git gt-ostis-dra
 clone_project https://github.com/gt-ostis-dev/gt-knowledge-processing-machine.git kb/gt-knowledge-processing-machine master
 clone_project https://github.com/gt-ostis-dev/gt-knowledge-base.git kb/gt-knowledge-base master
 clone_project https://github.com/gt-ostis-dev/gt-book.git kb/gt-book master
+clone_project https://github.com/gt-ostis-dev/set-theory.git kb/set-theory master
 
 stage "Prepare projects"
 
