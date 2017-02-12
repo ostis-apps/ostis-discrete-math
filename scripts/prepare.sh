@@ -35,6 +35,7 @@ clone_project https://github.com/ShunkevichDV/sc-machine.git sc-machine scp_stab
 clone_project https://github.com/Ivan-Zhukau/sc-web.git sc-web master
 clone_project https://github.com/ShunkevichDV/ims.ostis.kb.git ims.ostis.kb master
 clone_project https://github.com/gt-ostis-dev/gt-ostis-drawings.git gt-ostis-drawings master
+clone_project https://github.com/gt-ostis-dev/set-ostis-drawings set-ostis-drawings master
 clone_project https://github.com/gt-ostis-dev/gt-knowledge-processing-machine.git kb/gt-knowledge-processing-machine master
 clone_project https://github.com/gt-ostis-dev/gt-knowledge-base.git kb/gt-knowledge-base master
 clone_project https://github.com/gt-ostis-dev/gt-book.git kb/gt-book master
@@ -74,5 +75,10 @@ rm ../ims.ostis.kb/ui/ui_start_sc_element.scs
 ./install_scn_editor.sh
 
 ./update_component.sh $st
+
+cd ../set-ostis-drawings
+npm install
+grunt build
+cd ../scripts
 
 ./build_kb.sh
