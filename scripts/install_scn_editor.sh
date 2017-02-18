@@ -2,16 +2,6 @@
 #rst="\e[0m"     # Text reset
 
 # https://github.com/ShunkevichDV/ostis/blob/master/scripts/install_scn.sh
-./install_scn_editor_dependence.sh 
-
-cd ../
-if [ -d web-scn-editor/ ]; then
-echo 'Web-scn-editor already cloned, i will delete it.'
-rm -rf web-scn-editor/
-fi
-git clone https://bitbucket.org/iit-ims-team/web-scn-editor
-cd scripts/
-cd ../
 
 cd sc-web
 echo "var scWebPath = '">../text1.txt

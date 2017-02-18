@@ -40,6 +40,7 @@ clone_project https://github.com/gt-ostis-dev/gt-knowledge-processing-machine.gi
 clone_project https://github.com/gt-ostis-dev/gt-knowledge-base.git kb/gt-knowledge-base master
 clone_project https://github.com/gt-ostis-dev/gt-book.git kb/gt-book master
 clone_project https://github.com/vldnk/set-theory.git kb/set-theory master
+clone_project https://bitbucket.org/iit-ims-team/web-scn-editor web-scn-editor
 
 stage "Prepare projects"
 
@@ -73,10 +74,12 @@ stage "Build knowledge base"
 rm -rf ../kb/menu
 rm ../ims.ostis.kb/ui/ui_start_sc_element.scs
 
+./install_nodejs_dependence.sh
 ./install_scn_editor.sh
 
-./update_component.sh $st
-
+cd ../gt-ostis-drawings
+npm install
+grunt build
 cd ../set-ostis-drawings
 npm install
 grunt build

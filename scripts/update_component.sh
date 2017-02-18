@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 18.02.2017 not using this file, now use only grunt!!!
+
 red="\e[1;31m"  # Red B
 blue="\e[1;34m" # Blue B
 green="\e[0;32m"
