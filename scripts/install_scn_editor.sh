@@ -3,7 +3,7 @@
 
 # https://github.com/ShunkevichDV/ostis/blob/master/scripts/install_scn.sh
 
-cd sc-web
+cd ../sc-web
 echo "var scWebPath = '">../text1.txt
 pwd>>../text1.txt
 echo "/';">>../text1.txt
