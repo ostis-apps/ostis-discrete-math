@@ -17,7 +17,7 @@
 Download and build project
 
 ```sh
-git clone https://github.com/KovalM/gt.ostis
+git clone https://github.com/gt-ostis-dev/gt.ostis
 cd gt.ostis/scripts 
 ./prepare.sh     
 
