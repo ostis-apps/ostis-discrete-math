@@ -63,19 +63,14 @@ prepare "sc-web"
 sudo apt-get install python-dev # required for numpy module
 cd ../sc-web/scripts
 ./install_deps_ubuntu.sh
-./prepare_js.sh
-python build_components.py -i -a
+./install_nodejs_dependence.sh
+cd -
+cd ../sc-web
+npm install
+grunt build
 cd -
 echo -en $green"Copy server.conf"$rst"\n"
 cp -f ../config/server.conf ../sc-web/server/
-
-stage "Build knowledge base"
-
-rm -rf ../kb/menu
-rm ../ims.ostis.kb/ui/ui_start_sc_element.scs
-
-./install_nodejs_dependence.sh
-./install_scn_editor.sh
 
 cd ../gt-ostis-drawings
 npm install
@@ -83,6 +78,15 @@ grunt build
 cd ../set-ostis-drawings
 npm install
 grunt build
+cd ../web-scn-editor/
+npm install
+grunt build
+grunt exec:renewComponentsHtml
 cd ../scripts
+
+stage "Build knowledge base"
+
+rm -rf ../kb/menu
+rm ../ims.ostis.kb/ui/ui_start_sc_element.scs
 
 ./build_kb.sh
