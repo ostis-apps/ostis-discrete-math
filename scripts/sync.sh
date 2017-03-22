@@ -33,6 +33,7 @@ update_kb()
 			git checkout master
 			git pull --rebase
 			git checkout $local_branch
+			git rebase master
 			git stash pop --quiet
 		else
 			git stash
