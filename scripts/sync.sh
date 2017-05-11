@@ -31,13 +31,12 @@ update_kb()
         if [ $local_branch != "master" ]; then
 			git stash
 			git checkout master
-			git pull --rebase
+			git pull
 			git checkout $local_branch
-			git rebase master
 			git stash pop --quiet
 		else
 			git stash
-			git pull --rebase
+			git pull
 			git stash pop --quiet
 		fi
         cd -
