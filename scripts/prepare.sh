@@ -36,9 +36,9 @@ clone_project https://github.com/Ivan-Zhukau/sc-web.git sc-web master
 clone_project https://github.com/ShunkevichDV/ims.ostis.kb.git ims.ostis.kb master
 clone_project https://github.com/gt-ostis-dev/gt-ostis-drawings.git gt-ostis-drawings master
 clone_project https://github.com/gt-ostis-dev/set-ostis-drawings set-ostis-drawings master
-clone_project https://github.com/gt-ostis-dev/gt-knowledge-processing-machine.git kb/gt-knowledge-processing-machine master
-clone_project https://github.com/gt-ostis-dev/gt-knowledge-base.git kb/gt-knowledge-base master
-clone_project https://github.com/Gobestvini/set-theory.git kb/set-theory master
+clone_project https://github.com/gt-ostis-dev/gt-knowledge-processing-machine.git kb/graph_theory/gt-knowledge-processing-machine master
+clone_project https://github.com/gt-ostis-dev/gt-knowledge-base.git kb/graph_theory/gt-knowledge-base master
+clone_project https://github.com/MaxGavr/set-theory.git kb/set-theory discrete_math
 clone_project https://bitbucket.org/iit-ims-team/web-scn-editor web-scn-editor
 
 stage "Prepare projects"
