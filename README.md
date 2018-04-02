@@ -4,20 +4,20 @@
 
 ## Components
 
-<a href="https://github.com/gt-ostis-dev/gt-knowledge-base">Knowledge base</a>
+<a href="https://github.com/ostis-apps/gt-knowledge-base">Knowledge base</a>
 
-<a href="https://github.com/gt-ostis-dev/gt-knowledge-processing-machine">Solver</a>
+<a href="https://github.com/ostis-apps/gt-knowledge-processing-machine">Solver</a>
 
-<a href="https://github.com/gt-ostis-dev/gt-book">Graph Theory Book</a>
+<a href="https://github.com/ostis-apps/gt-book">Graph Theory Book</a>
 
-<a href="https://github.com/gt-ostis-dev/gt-ostis-drawings">Graph editor</a>
+<a href="https://github.com/ostis-apps/gt-ostis-drawings">Graph editor</a>
 
 ## Installation
 
 Download and build project
 
 ```sh
-git clone https://github.com/gt-ostis-dev/gt.ostis
+git clone https://github.com/ostis-apps/gt.ostis
 cd gt.ostis/scripts 
 ./prepare.sh     
 
