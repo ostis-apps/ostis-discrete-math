@@ -26,6 +26,7 @@ cd gt.ostis/scripts
 Start project
 
 ```sh
+cd gt.ostis/scripts 
 ./restart_sctp.sh 
 
 ```
@@ -33,6 +34,7 @@ Start project
 Start web-server
 
 ```sh
+cd gt.ostis/scripts 
 ./run_scweb.sh   
 
 ```
