@@ -38,7 +38,7 @@ clone_project https://github.com/ostis-apps/gt-ostis-drawings.git gt-ostis-drawi
 clone_project https://github.com/ostis-apps/set-ostis-drawings set-ostis-drawings master
 clone_project https://github.com/ostis-apps/gt-knowledge-processing-machine.git kb/graph_theory/gt-knowledge-processing-machine master
 clone_project https://github.com/ostis-apps/gt-knowledge-base.git kb/graph_theory/gt-knowledge-base master
-clone_project https://github.com/MaxGavr/set-theory.git kb/set-theory discrete_math
+clone_project https://github.com/ostis-apps/set-theory.git kb/set-theory master
 clone_project https://bitbucket.org/iit-ims-team/web-scn-editor web-scn-editor
 
 stage "Prepare projects"
