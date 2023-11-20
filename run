@@ -1,0 +1,68 @@
+#!/bin/bash
+set -e
+RED='\033[0;91m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+build=false
+save=false
+force=false
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    --build) build=true;;
+    --save) save=true;;
+    --force) force=true;;
+    *) echo "Unknown option passed: $1"; exit 1;;
+  esac
+  shift
+done
+
+if [[ ! -d /dm/kb/.bin ]]; then
+  mkdir -p /dm/kb/.bin
+fi
+
+if [[ ! -d /dm/kb/.bin/.current ]] && ! $build; then
+  read -p "No built kb found. Would you like me to run the build first? [Y/n] " answer
+  if [[ "${answer:-y}" =~ ^[Yy]$ ]]; then
+    build=true
+  else
+    echo -e "${RED}Canceled${NC}"
+    exit 1
+  fi
+fi
+
+cd /dm
+
+if $build; then
+  hash=$(find /dm/kb -type f -not -path "/dm/kb/.bin/**" -not -path "**/.git/**" -print0 | sort -z | xargs -0 sha1sum | sha1sum | awk '{print $1}')
+  if [[ -f /dm/kb/.bin/.temp ]]; then
+    temp_hash=$(cat /dm/kb/.bin/.temp)
+  fi
+  if [[ ! -d /dm/kb/.bin/$hash && $hash != $temp_hash ]] || $force; then
+    rm -rf /dm/kb/.bin/.current /dm/kb/.bin/.temp /dm/kb/.bin/$hash
+    if $save; then
+      mkdir -p /dm/kb/.bin/$hash
+      ln -s /dm/kb/.bin/$hash /dm/kb/.bin/.current
+    else
+      echo $hash > /dm/kb/.bin/.temp
+    fi
+
+    echo
+    echo -e "${GREEN}Starting build process${NC}"
+    sc-machine/bin/sc-builder -f --clear -c ostis-web-platform.ini # possibly modify kb-bin output
+  else
+    if [[ $hash == $temp_hash ]] && $save; then
+      if [[ ! -d /dm/kb/.bin/$hash ]]; then
+        mv /dm/kb/.bin/.current /dm/kb/.bin/$hash
+        ln -s /dm/kb/.bin/$hash /dm/kb/.bin/.current
+        echo -e "${GREEN}Saved to cache.${NC}"
+      fi
+      rm /dm/kb/.bin/.temp
+    fi
+    echo
+    echo -e "${GREEN}Chill! Build cache is used ~ ~${NC}"
+    echo
+  fi
+fi
+
+(sc-machine/bin/sc-server -c ostis-web-platform.ini) & (python3 sc-web/server/app.py)
