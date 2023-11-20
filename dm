@@ -146,13 +146,13 @@ _clone_repos() {
 upgrade() {
   docker=$DOCKER
   deep=$DM_DEEP
-  expose=$DM_EXPOSE
+  # expose=$DM_EXPOSE
 
   while [[ "$#" -gt 0 ]]; do
     case $1 in
       --docker) docker=true;;
       --deep) deep=true;;
-      --expose) expose=true;;
+      # --expose) expose=true;;
       *) echo "Unknown option passed: $1"; exit 1;;
     esac
     shift
@@ -173,10 +173,10 @@ upgrade() {
   if [[ -n $docker ]]; then
     # Fix machine's ws not being exposed:
     sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' ostis-web-platform/ostis-web-platform.ini
-    if [[ -n $expose ]]; then
-      ./ostis-web-platform/scripts/install_submodules.sh
-      sed -i '/"${PLATFORM_PATH}\/scripts\/install_submodules.sh"/d' ./ostis-web-platform/scripts/install_platform.sh
-    fi
+    # if [[ -n $expose ]]; then
+    ./ostis-web-platform/scripts/install_submodules.sh
+    sed -i '/"${PLATFORM_PATH}\/scripts\/install_submodules.sh"/d' ./ostis-web-platform/scripts/install_platform.sh
+    # fi
     echo -e "${GREEN}Installing web-platform in Docker${NC}"
     docker buildx build --progress auto --force-rm --tag dm .
   else

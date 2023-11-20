@@ -9,12 +9,12 @@ NC='\033[0m'
 
 docker=$DOCKER
 deep=$DM_DEEP
-expose=$DM_EXPOSE
+# expose=$DM_EXPOSE
 while [[ "$#" -gt 0 ]]; do
   case $1 in
     docker) docker=true;;
     deep) deep=true;;
-    expose) expose=true;;
+    # expose) expose=true;;
     *) echo -e "${RED}Unknown option passed: $1${NC}"; exit 1;;
   esac
   shift
@@ -64,7 +64,8 @@ cp ./ostis-web-platform.ini $dm_install/ostis-web-platform.ini
 cp ./repo.path $dm_install/repo.path
 cp ./run $dm_install/run
 
-cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
+# cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
+cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
 command $cmd
 
 echo "DM was installed successfully to $exe"
