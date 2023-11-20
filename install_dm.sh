@@ -55,12 +55,12 @@ echo
 
 
 # Installation ...
-curl -fsSLo $exe https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/dm
+curl -fsSLo $exe https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/dm
 cd $dm_install
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/Dockerfile
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/ostis-web-platform.ini
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/repo.path
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/run
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/Dockerfile
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/ostis-web-platform.ini
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/repo.path
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/run
 
 # cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
 cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
