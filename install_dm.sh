@@ -29,11 +29,8 @@ if [[ ! -d "$dm_install/bin" ]]; then
 fi
 
 working_dir=$(pwd -P)
-parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P)
-cd $parent_path
-
-
-
+# parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P)
+# cd $parent_path
 
 case $working_dir in
   /|$HOME) source_dir="${DM_SOURCE:-$dm_install/dm}";;
@@ -58,11 +55,12 @@ echo
 
 
 # Installation ...
-cp ./dm $exe
-cp ./Dockerfile $dm_install/Dockerfile
-cp ./ostis-web-platform.ini $dm_install/ostis-web-platform.ini
-cp ./repo.path $dm_install/repo.path
-cp ./run $dm_install/run
+curl -fsSLo $exe https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/dm
+cd $dm_install
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/Dockerfile
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/ostis-web-platform.ini
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/repo.path
+curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/dev/run
 
 # cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
 cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
