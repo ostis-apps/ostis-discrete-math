@@ -1,10 +1,10 @@
 # DM app
 
-The DM app is a CLI tool for managing and running the Discrete Math (DM) web-platform during development. It provides various features for building both web-platform and knowledge base (including *smart building* and *cache management*), starting, stopping, configuring and efficient updading the app and its [components](#components).
+The DM app is a CLI tool for managing and running the Discrete Math (DM) web-platform during development. It provides a set of features for building both web-platform and knowledge base (including *smart building* and *cache management*), starting, stopping, configuring and efficient updading the app and its [components](#components).
 
 ## Installation
 
-Please learn about [Execution modes](#execution-modes) before installation.
+Please learn about [execution modes](#execution-modes) before installing the app.
 
 ```sh
 # Natively (ubuntu)
@@ -14,9 +14,9 @@ curl -fsSL https://dev.ostis.tech/install/dm | sh
 curl -fsSL https://dev.ostis.tech/install/dm | sh -s docker
 ```
 
-The web platform is installed to `~/.ostis` by default. The source directory, where DM components are stored, is set to the location where the installation script was executed from, except when the script is running from the home directory `~/`, in which case the source directory will be set to `~/.ostis/dm`.
+The web platform is installed to `~/.ostis` by default. The source directory, where DM components are stored, is set to location where the installation script was executed from, except for the case when the script was executed from home directory `~/`, in which case the source directory is set to `~/.ostis/dm`.
 
-To specify a custom directory for the web-platform installation, please set the `DM_INSTALL` environment variable before running the installation script, or the `DM_SOURCE` variable to override the default source directory. Note that the source variable can be modified at any time later using [`dm config`](#configuration).
+To specify a custom directory for the web-platform installation, please set `DM_INSTALL` environment variable before running the installation script, or `DM_SOURCE` variable to override the default source directory. Note that the source variable can be modified at any time later using [`dm config`](#configuration).
 
 
 ## Getting started
@@ -32,7 +32,7 @@ Run `dm` to get started. The main commands are listed below:
 
 ### Shortcuts
 
-The DM app also provides some shortcuts for commonly used commands:
+The app also provides a few shortcuts for commonly used commands:
 - `sb` is equivalent to `start --build`.
 - `sa` is equivalent to `start --build --save`.
 
@@ -47,7 +47,7 @@ In **Native mode**, the DM app is built and executed directly on your host machi
 
 ## Usage
 
-Each command of the DM app serves a specific purpose and can be executed with different options. Below is a detailed explanation of each command.
+Each command of the DM app has a specific role and can be executed with different options. Below is a detailed explanation of each command.
 
 ### Configuration
 
@@ -59,8 +59,9 @@ Available options:
 - `BUILD` — always run kb build when starting the platform with `dm start`.\
   Not recommended, consider using shortcut `dm sb` or `dm sa` instead.
 - `BG` — always start the platform in the background (docker-only).
+- `DM_SOURCE` — default source directory where DM components should be stored.
 
-By default, the `nano` editor is used, but you can set the `EDITOR` environment variable to specify a different editor.
+By default, the `nano` editor is used, but you can set `EDITOR` environment variable to specify a different editor.
 
 ### Build
 
@@ -70,11 +71,11 @@ For building the knowledge base in Docker, use `dm start --build` or its shortcu
 
 ### Start
 
-This command starts the web-platform. It can be executed with various options:
+Starts the web-platform. Available options:
 
-- `--build` —  ****builds the knowledge base before starting the web-platform.
+- `--build` —  builds the knowledge base before starting the web-platform.
     - The *smart build* feature never rebuilds the knowledge base if no source files are changed. **(docker only)**
-- `--docker` —  starts the web-platform in Docker (always enabled if the `DOCKER` variable is set in config).
+- `--docker` —  starts the web-platform in Docker (always enabled if `DOCKER` variable is set in config).
 - `--bg` — runs the web-platform in the background. **(docker only)**
 - `--save` — when building, saves the build state of knowledge base to the cache. **(docker only)**
 - `--force` — forcefully re-builds the web-platform, even if it is cached or no files are changed. **(docker only)**
@@ -87,9 +88,9 @@ This command starts the web-platform. It can be executed with various options:
 
 Pulls updates from sc-machine, scp-machine, and sc-web repositories and re-builds the platform. 
 
-Unless the `DOCKER` variable is set in config, it can be executed with the `--docker` option to perform the upgrade in Docker.
+Unless `DOCKER` variable is defined in config, this command can be executed with a `--docker` option to perform the upgrade in Docker.
 
-By default, all platform dependencies are pulled shallowly with no git history, neither additional branches. Pass `--deep` option or set the `DM_DEEP` variable to `true` in the config file or before running the command to unshallow and perform deep updates.
+By default, all platform dependencies are pulled shallowly with no git history, neither additional branches. Pass the `--deep` option or set `DM_DEEP` variable to `true` in the config file or before running the command to unshallow and perform deep updates.
 
 Improvements of the platform build in Docker compared to ostis-web-platform:
 
@@ -106,7 +107,7 @@ Platform components configuration: **Coming soon!**
 
 Pulls all changes from DM components, including graph theory knowledge base component, graph theory problem solver component, and set theory component.
 
-The location of these components is defined by the `DM_SOURCE` environment variable and can be changed using `dm config` command.
+The location of these components is defined by `DM_SOURCE` environment variable and can be changed using `dm config` command.
 
 DM components configuration: **Coming soon!**
 
