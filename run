@@ -22,7 +22,8 @@ if [[ ! -d /dm/kb/.bin ]]; then
 fi
 
 if [[ ! -d /dm/kb/.bin/.current ]] && ! $build; then
-  read -p "No built kb found. Would you like me to run the build first? [Y/n] " answer
+  printf >&2 "No built kb found. Would you like me to run the build first? [Y/n] "
+  read answer
   if [[ "${answer:-y}" =~ ^[Yy]$ ]]; then
     build=true
   else
