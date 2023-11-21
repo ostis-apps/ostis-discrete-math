@@ -21,7 +21,8 @@ fi
 _terminate_prompt() {
   if docker ps -af name=dm | grep dm ; then
     echo
-    read -p "Web-platform is already running. ${1:-''} [y/N] " answer
+    printf >&2 "Web-platform is already running. ${1:-''} [y/N] "
+    read answer
     if [[ "${answer:-n}" =~ ^[Yy]$ ]]; then
       docker rm dm --force > /dev/null
     else
