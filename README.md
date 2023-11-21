@@ -18,6 +18,10 @@ The web platform is installed to `~/.ostis` by default. The source directory, wh
 
 To specify a custom directory for the web-platform installation, please set `DM_INSTALL` environment variable before running the installation script, or `DM_SOURCE` variable to override the default source directory. Note that the source variable can be modified at any time later using [`dm config`](#configuration).
 
+If installing for the first time, you may add `rc` variable pointing to your shell config file before `sh` command to make the installation script add necessary configuration automatically, e.g.
+```sh
+curl -fsSL https://dev.ostis.tech/install/dm | rc=~/.zshrc sh
+```
 
 ## Getting started
 
