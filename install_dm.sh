@@ -64,6 +64,7 @@ curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/mas
 
 # cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
 cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
+chmod 777 $cmd
 command $cmd
 
 echo "DM was installed successfully to $exe"
