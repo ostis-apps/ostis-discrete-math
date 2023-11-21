@@ -62,18 +62,10 @@ curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/mas
 curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/repo.path
 curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/run
 
-# cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
-cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
-chmod 777 $exe
-command $cmd
-
-echo "DM was installed successfully to $exe"
-echo
-
 
 
 if command -v dm >/dev/null; then
-  echo "Run 'dm --help' to get started"
+  echo "DM was installed successfully to $exe"
 else
   echo "It looks like DM_INSTALL and PATH variables are missing."
   read -p "Do you want me to add them to your shell config? [Y/n] " answer
@@ -87,6 +79,8 @@ else
         echo "Manually add the following lines to your shell config (e.g. ~/.zshrc or ~/.bashrc)"
         echo "  export DM_INSTALL=\"$dm_install\""
         echo "  export PATH=\"\$DM_INSTALL/bin:\$PATH\""
+        echo
+        echo "And run 'dm upgrade' to install the platform"
         exit 0
       fi
     fi
@@ -94,11 +88,27 @@ else
     echo "export DM_INSTALL=\"$dm_install\"" >> $config_path
     echo "export PATH=\"\$DM_INSTALL/bin:\$PATH\"" >> $config_path
     echo
-    echo "Restart your terminal and run 'dm --help' to get started"
+    echo "DM was installed successfully to $exe"
+    needs_restart=true
   else
     echo
     echo "Manually add the following lines to your shell config (e.g. ~/.zshrc or ~/.bashrc)"
     echo "  export DM_INSTALL=\"$dm_install\""
     echo "  export PATH=\"\$DM_INSTALL/bin:\$PATH\""
+    echo
+    echo "And run 'dm upgrade' to install the platform"
+    exit 0
   fi
+fi
+
+# cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
+cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
+chmod 777 $exe
+command $cmd
+
+echo
+if $needs_restart; then
+  echo "Restart your terminal and run 'dm' to get started"
+else
+  echo "Run 'dm' to get started"
 fi
