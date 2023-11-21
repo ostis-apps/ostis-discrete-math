@@ -67,33 +67,18 @@ curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/mas
 if command -v dm >/dev/null; then
   echo "DM was installed successfully to $exe"
 else
-  echo "It looks like DM_INSTALL and PATH variables are missing."
-  printf >&2 "Do you want me to add them to your shell config? [Y/n] "
-  read answer
-  if [[ "${answer:-y}" =~ ^[Yy]$ ]]; then
-    printf >&2 "Please specify the path to your shell config (e.g. ~/.zshrc or ~/.bashrc): "
-    read config_path
-    config_path="${config_path/#\~/$HOME}"
-    if [[ ! -f $config_path ]]; then
-      printf >&2 "It looks like the specified file does not exist yet. Do you want me to create it? [y/N] "
-      read confirmation
-      if [[ ! "${confirmation:-n}" =~ ^[Yy]$ ]]; then
-        echo
-        echo "Manually add the following lines to your shell config (e.g. ~/.zshrc or ~/.bashrc)"
-        echo "  export DM_INSTALL=\"$dm_install\""
-        echo "  export PATH=\"\$DM_INSTALL/bin:\$PATH\""
-        echo
-        echo "And run 'dm upgrade' to install the platform"
-        exit 0
-      fi
-    fi
-    echo "" >> $config_path
-    echo "export DM_INSTALL=\"$dm_install\"" >> $config_path
-    echo "export PATH=\"\$DM_INSTALL/bin:\$PATH\"" >> $config_path
+  if [[ -n $SHELL_RC ]]; then
+    echo "" >> $SHELL_RC
+    echo "export DM_INSTALL=\"$dm_install\"" >> $SHELL_RC
+    echo "export PATH=\"\$DM_INSTALL/bin:\$PATH\"" >> $SHELL_RC
+    echo "" >> $SHELL_RC
     echo
     echo "DM was installed successfully to $exe"
-    needs_restart=true
+    # For current session
+    export DM_INSTALL="$dm_install"
+    export PATH="$DM_INSTALL/bin:$PATH"
   else
+    echo "It looks like DM_INSTALL and PATH variables are missing."
     echo
     echo "Manually add the following lines to your shell config (e.g. ~/.zshrc or ~/.bashrc)"
     echo "  export DM_INSTALL=\"$dm_install\""
