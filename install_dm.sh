@@ -67,11 +67,11 @@ curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/mas
 if command -v dm >/dev/null; then
   echo "DM was installed successfully to $exe"
 else
-  if [[ -n $SHELL_RC ]]; then
-    echo "" >> $SHELL_RC
-    echo "export DM_INSTALL=\"$dm_install\"" >> $SHELL_RC
-    echo "export PATH=\"\$DM_INSTALL/bin:\$PATH\"" >> $SHELL_RC
-    echo "" >> $SHELL_RC
+  if [[ -n $rc ]]; then
+    echo "" >> $rc
+    echo "export DM_INSTALL=\"$dm_install\"" >> $rc
+    echo "export PATH=\"\$DM_INSTALL/bin:\$PATH\"" >> $rc
+    echo "" >> $rc
     echo
     echo "DM was installed successfully to $exe"
     # For current session
