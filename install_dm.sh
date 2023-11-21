@@ -68,12 +68,15 @@ if command -v dm >/dev/null; then
   echo "DM was installed successfully to $exe"
 else
   echo "It looks like DM_INSTALL and PATH variables are missing."
-  read -p "Do you want me to add them to your shell config? [Y/n] " answer
+  printf >&2 "Do you want me to add them to your shell config? [Y/n] "
+  read answer
   if [[ "${answer:-y}" =~ ^[Yy]$ ]]; then
-    read -p "Please specify the path to your shell config (e.g. ~/.zshrc or ~/.bashrc): " config_path
+    printf >&2 "Please specify the path to your shell config (e.g. ~/.zshrc or ~/.bashrc): "
+    read config_path
     config_path="${config_path/#\~/$HOME}"
     if [[ ! -f $config_path ]]; then
-      read -p "It looks like the specified file does not exist yet. Do you want me to create it? [y/N] " confirmation
+      printf >&2 "It looks like the specified file does not exist yet. Do you want me to create it? [y/N] "
+      read confirmation
       if [[ ! "${confirmation:-n}" =~ ^[Yy]$ ]]; then
         echo
         echo "Manually add the following lines to your shell config (e.g. ~/.zshrc or ~/.bashrc)"
