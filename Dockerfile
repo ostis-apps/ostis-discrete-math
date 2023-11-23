@@ -36,8 +36,6 @@ COPY --from=scp /dm/sc-machine /dm/sc-machine
 COPY --from=web-server /usr/bin/python3 /usr/bin/python3
 COPY --from=web-server /usr/local/lib/python3.8/dist-packages /usr/local/lib/python3.8/dist-packages
 COPY --from=web-client /sc-web/dist /dm/sc-web/
-COPY ostis-web-platform/scp-machine/kb /dm/scp-machine/kb
-COPY ostis-web-platform/scp-example-kb /dm/scp-example-kb
 COPY ostis-web-platform.ini repo.path run /dm/
 COPY ostis-web-platform/ims.ostis.kb /dm/ims.ostis.kb
 CMD [ "./run" ]
