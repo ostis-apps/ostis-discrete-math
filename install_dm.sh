@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 RED='\033[0;91m'
 YELLOW='\033[1;33m'
 ORANGE='\033[0;33m'
@@ -19,6 +18,25 @@ while [[ "$#" -gt 0 ]]; do
   esac
   shift
 done
+
+
+# Requirements
+if [[ -n $docker ]]; then
+  docker_exists="$(command -v docker)"
+  if [[ ! $docker_exists ]]; then
+    echo
+    echo -e "${RED}Please install ${BLUE}docker${RED} first${NC}"
+    exit 1
+  fi
+  buildx_exists="$(docker buildx)"
+  if [[ ! $buildx_exists ]]; then
+    echo
+    echo -e "${RED}Please install ${BLUE}docker-buildx${RED} first${NC}"
+    exit 1
+  fi
+fi
+set -e
+
 
 dm_install="${DM_INSTALL:-$HOME/.ostis}"
 bin_dir=""
