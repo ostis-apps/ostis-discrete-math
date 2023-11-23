@@ -140,6 +140,7 @@ _clone_repos() {
         echo -e "${GREEN}Shallowly cloning $repo_name with a single branch '$branch'${NC}"
         git clone --depth 1 --single-branch --branch "$branch" "https://github.com/$repo_name.git" "$directory"
       fi
+      find . -maxdepth 1 -type d -empty -delete
     fi
   done
 }
@@ -159,24 +160,19 @@ upgrade() {
     shift
   done
 
-  repos=(
-    "ostis-ai/ostis-web-platform:test_scp_machine:ostis-web-platform"
-    "ostis-ai/scp-machine:main:ostis-web-platform/scp-machine"
-  )
-
-  _clone_repos "${repos[@]}"
+  _clone_repos "${platform_repos[@]}"
 
   if [[ ! -n $deep ]]; then
     # Modify scripts for shallow cloning
     find ./ostis-web-platform/scripts -type f -exec sed -i 's/git clone "/git clone --depth 1 --shallow-submodules "/g' {} +
   fi
 
+  sed -i '/"${PLATFORM_PATH}\/scripts\/install_submodules.sh"/d' ./ostis-web-platform/scripts/install_platform.sh
   if [[ -n $docker ]]; then
     # Fix machine's ws not being exposed:
     sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' ostis-web-platform/ostis-web-platform.ini
     # if [[ -n $expose ]]; then
-    ./ostis-web-platform/scripts/install_submodules.sh
-    sed -i '/"${PLATFORM_PATH}\/scripts\/install_submodules.sh"/d' ./ostis-web-platform/scripts/install_platform.sh
+    # ./ostis-web-platform/scripts/install_submodules.sh
     # fi
     echo -e "${GREEN}Installing web-platform in Docker${NC}"
     docker buildx build --progress auto --force-rm --tag dm .
@@ -249,11 +245,8 @@ cache() {
 }
 
 pull() {
-  repos=(
-    "ostis-apps/gt-knowledge-base:0.8.0:$DM_SOURCE/knowledge-base"
-    "ostis-apps/gt-knowledge-processing-machine:0.8.0_fix:$DM_SOURCE/agents"
-  )
-  _clone_repos "${repos[@]}"
+  cd $DM_SOURCE
+  _clone_repos "${dm_repos[@]}"
 }
 
 help() {
