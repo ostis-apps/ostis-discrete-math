@@ -95,9 +95,4 @@ chmod 777 $exe
 chmod 777 "$dm_install/run"
 command $cmd
 
-echo
-if $needs_restart; then
-  echo "Restart your terminal and run 'dm' to get started"
-else
-  echo "Run 'dm' to get started"
-fi
+echo "Run 'dm' to get started"
