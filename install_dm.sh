@@ -90,12 +90,22 @@ echo
 
 
 # Installation ...
-curl -fsSLo $exe https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/dm
-cd $dm_install
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/Dockerfile
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/ostis-web-platform.ini
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/repo.path
-curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/run
+if [[ $DM_ENV == "dev" ]]; then
+  echo "Enabled DEV mode"
+  echo
+  cp ./dm $exe
+  cp ./Dockerfile $dm_install/Dockerfile
+  cp ./ostis-web-platform.ini $dm_install/ostis-web-platform.ini
+  cp ./repo.path $dm_install/repo.path
+  cp ./run $dm_install/run
+else
+  curl -fsSLo $exe https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/dm
+  cd $dm_install
+  curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/Dockerfile
+  curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/ostis-web-platform.ini
+  curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/repo.path
+  curl -fsSLO https://raw.githubusercontent.com/ostis-apps/ostis-discrete-math/master/run
+fi
 
 
 
