@@ -30,7 +30,7 @@ Run `dm` to get started. The main commands are listed below:
 - [`start`](#start) (shortcut `s`) — starts the web-platform (on localhost:8000).
 - [`stop`](#stop) — terminates the web-platform running in the background or another process.
 - [`config`](#configuration) —  changes the app configuration.
-- [`upgrade`](#upgrade) — upgrades the web-platform by picking up updates from sc-machine, scp-machine, and sc-web.
+- [`upgrade`](#upgrade) — upgrades the web-platform by picking up updates from sc-machine, scp-machine, sc-web, and ims.
 - [`pull`](#pull) — pulls all changes from DM components, including kb, agents, and set theory.
 - [`cache`](#cache) — runs the cache manager.
 
@@ -90,7 +90,7 @@ Starts the web-platform. Available options:
 
 ### Upgrade
 
-Pulls updates from sc-machine, scp-machine, and sc-web repositories and re-builds the platform. 
+Pulls updates from sc-machine, scp-machine, sc-web, and ims repositories and re-builds the platform. 
 
 Unless `DOCKER` variable is defined in config, this command can be executed with a `--docker` option to perform the upgrade in Docker.
 

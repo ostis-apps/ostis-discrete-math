@@ -263,7 +263,7 @@ help() {
   echo -e "  ${BLUE}start${NC}, ${BLUE}s${NC}     — Start web-platform (http://localhost:8000)."
   echo -e "  ${BLUE}stop${NC}  ${BLUE} ${NC}      — Terminate web-platform running in background or another process."
   echo -e "  ${BLUE}config${NC}  ${BLUE} ${NC}    — Change app configuration."
-  echo -e "  ${BLUE}upgrade${NC}  ${BLUE} ${NC}   — Upgrade web-platform. Pick up all updates from sc-machine, scp-machine, sc-web."
+  echo -e "  ${BLUE}upgrade${NC}  ${BLUE} ${NC}   — Upgrade web-platform. Pick up all updates from sc-machine, scp-machine, sc-web, ims."
   echo -e "  ${BLUE}pull${NC}  ${BLUE} ${NC}      — Pull all changes from DM components: kb, agents, set theory."
   echo -e "  ${BLUE}cache${NC}  ${BLUE} ${NC}     — Run cache manager."
   echo -e ""
