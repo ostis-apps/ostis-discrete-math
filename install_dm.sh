@@ -92,6 +92,7 @@ fi
 # cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}${expose:+ --expose}"
 cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
 chmod 777 $exe
+chmod 777 "$dm_install/run"
 command $cmd
 
 echo
