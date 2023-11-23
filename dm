@@ -127,6 +127,32 @@ _clone_repos() {
     directory="${repo_info[2]:-''}"
 
     if [[ -d $directory ]]; then
+      same_repo=$(echo "$(git -C $directory remote -v | grep $repo_name)")
+      if [[ ! -n $same_repo ]]; then
+        # Repo changed, delete the old one
+        if [[ -n $DM_INSTALLATION ]]; then
+          answer=n
+        else
+          printf >&2 "New repo is detected in ${directory}. Do you want to continue? [Y/n] "
+          read answer
+        fi
+        if [[ "${answer:-y}" =~ ^[Yy]$ ]]; then
+          rm -rf $directory
+        else
+          echo -e "${RED}Old repo is used in ${directory}${NC}"
+        fi
+      elif [[ "$(git -C $directory branch --show-current)" != $branch ]]; then
+        # Branch changed, checkout to it
+        $(echo "$(git -C $directory config --unset-all remote.origin.fetch)")
+        $(echo "$(git -C $directory config --add remote.origin.fetch +refs/heads/$branch:refs/remotes/origin/$branch 2> /dev/null)")
+        $(echo "$(git -C $directory fetch 2> /dev/null)")
+        echo -e "${YELLOW}Switching to branch ${BLUE}$branch${YELLOW} ...${NC}"
+        git -C $directory checkout $branch --force 1> /dev/null
+      fi
+    fi
+
+
+    if [[ -d $directory ]]; then
       if [[ -n $deep ]]; then
         git -C "$directory" pull --unshallow
       else
@@ -140,8 +166,8 @@ _clone_repos() {
         echo -e "${GREEN}Shallowly cloning $repo_name with a single branch '$branch'${NC}"
         git clone --depth 1 --single-branch --branch "$branch" "https://github.com/$repo_name.git" "$directory"
       fi
-      find . -maxdepth 1 -type d -empty -delete
     fi
+    find . -maxdepth 1 -type d -empty -delete
   done
 }
 

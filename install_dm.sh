@@ -138,6 +138,6 @@ fi
 cmd="$exe upgrade${docker:+ --docker}${deep:+ --deep}"
 chmod 777 $exe
 chmod 777 "$dm_install/run"
-command $cmd
+DM_INSTALLATION=true command $cmd
 
 echo "Run 'dm' to get started"
