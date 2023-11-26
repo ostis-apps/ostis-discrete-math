@@ -131,7 +131,7 @@ Natively: **Coming soon!**
 
 [Problem Solver](https://github.com/ostis-apps/gt-knowledge-processing-machine/tree/0.8.0_fix)
 
-[Set Theory](https://github.com/ostis-apps/set-theory/tree/0.8.0_kb)
+[Set Theory](https://github.com/ostis-apps/set-theory/tree/0.8.0-kb)
 
 [Graph Editor](https://github.com/ostis-apps/gt-ostis-drawings)
 
