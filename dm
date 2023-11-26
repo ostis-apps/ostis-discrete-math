@@ -167,7 +167,7 @@ _clone_repos() {
         git clone --depth 1 --single-branch --branch "$branch" "https://github.com/$repo_name.git" "$directory"
       fi
     fi
-    find . -maxdepth 1 -type d -empty -delete
+    find $directory -maxdepth 1 -type d -empty -delete
   done
 }
 
