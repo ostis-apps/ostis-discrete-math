@@ -57,9 +57,7 @@ prepare()
 
 prepare "sc-machine"
 cd "$ROOT"/sc-machine/scripts
-./install_deps_ubuntu.sh
-
-sudo apt-get install redis-server
+./install_dependencies.sh
 
 ./make_all.sh
 cd "$ROOT"
