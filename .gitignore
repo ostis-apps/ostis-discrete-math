@@ -1,3 +1,11 @@
+.idea
+.vscode
+.cache
+cmake-build-debug
+cmake-build-release
+bin
+build
+
 kb
 kb.bin
 sc-machine
@@ -10,3 +18,10 @@ set-ostis-drawings
 web-scn-editor
 
 *.*~
+
+sc-memory.log
+sc-server.log
+
+.DS_Store
+secret.txt
+data.db
