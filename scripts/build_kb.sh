@@ -1,16 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eo pipefail
-ROOT="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/.."
-export REPO_PATH_FILE="$ROOT/repo.path"
-export CONFIG_PATH="$ROOT/ostis-discrete-math.ini"
-"$ROOT"/scripts/copy_ims_kb.sh
+source "$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/set_vars.sh"
 
-export LD_LIBRARY_PATH="$ROOT"/sc-machine/bin
-if [ ! -d "$ROOT/kb.bin" ]; then
-    mkdir "$ROOT"/kb.bin
+"${DM_ROOT_PATH}/scripts/copy_ims_kb.sh"
+
+if [ ! -d "${DM_ROOT_PATH}/kb.bin" ]; then
+    mkdir "${DM_ROOT_PATH}/kb.bin"
 fi
-cd "$ROOT"
-"$ROOT/sc-machine/scripts/build_kb.sh" -i "$ROOT"/repo.path
-
-cd "$ROOT"/scripts
-
+"${DM_ROOT_PATH}/sc-machine/scripts/build_kb.sh" -i "${DM_ROOT_PATH}/repo.path"

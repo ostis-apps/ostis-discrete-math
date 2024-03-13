@@ -1,8 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eo pipefail
-ROOT="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/.."
-export REPO_PATH_FILE="$ROOT/repo.path"
-export CONFIG_PATH="$ROOT/ostis-discrete-math.ini"
+source "$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/set_vars.sh"
 
 red="\e[1;31m"  # Red B
 blue="\e[1;34m" # Blue B
@@ -22,15 +20,12 @@ stage()
 
 clone_project()
 {
-    if [ ! -d "$ROOT/$2" ]; then
-        echo -en $green"Clone $2$rst\n"
-        git clone $1 --branch "$3" --single-branch "$ROOT"/$2
-        cd "$ROOT"/$2
-        if [ -n "$4" ];
-        then
-          git checkout "$4"
+    if [ ! -d "${DM_ROOT_PATH}/$2" ]; then
+        echo -en $green"Clone $1 into $DM_ROOT_PATH/$2$rst\n"
+        git clone "$1" --branch "$3" --single-branch "${DM_ROOT_PATH}/$2" --recursive
+        if [ -n "$4" ]; then
+          ( cd "${DM_ROOT_PATH}/$2"; git checkout "$4" )
         fi
-        cd "$ROOT"
     else
         echo -en "You can update "$green"$2"$rst" manualy$rst\n"
     fi
@@ -56,35 +51,15 @@ prepare()
 }
 
 prepare "sc-machine"
-cd "$ROOT"/sc-machine/scripts
-./install_dependencies.sh --dev
 
-./build_sc_machine.sh
-cd "$ROOT"
+"${DM_ROOT_PATH}/sc-machine/scripts/install_dependencies.sh" --dev
+"${DM_ROOT_PATH}/sc-machine/scripts/build_sc_machine.sh"
 
 prepare "sc-web"
-cd "$ROOT"/sc-web/scripts
-./install.sh
+"${DM_ROOT_PATH}/sc-web/scripts/install.sh"
 
-cd "$ROOT"/sc-web
-npm install
-grunt build
-cd "$ROOT"
-echo -en $green"Copy server.conf"$rst"\n"
-cp -f "$ROOT"/config/server.conf "$ROOT"/sc-web/server/
-
-cd "$ROOT"/gt-ostis-drawings
-npm install
-grunt build
-cd "$ROOT"/set-ostis-drawings
-npm install
-grunt build
-
-cd "$ROOT"/scripts
+( cd "${DM_ROOT_PATH}/gt-ostis-drawings"; npm install; npx grunt build )
+( cd "${DM_ROOT_PATH}/set-ostis-drawings"; npm install; npx grunt build )
 
 stage "Build knowledge base"
-
-rm -rf "$ROOT"/kb/menu || echo "kb/menu is not found"
-rm "$ROOT"/ims.ostis.kb/ui/ui_start_sc_element.scs || echo "ui_start_sc_element.scs is not found"
-
 ./build_kb.sh

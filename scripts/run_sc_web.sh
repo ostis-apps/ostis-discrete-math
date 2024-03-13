@@ -1,7 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eo pipefail
-ROOT="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/.."
-export REPO_PATH_FILE="$ROOT/repo.path"
-export CONFIG_PATH="$ROOT/ostis-discrete-math.ini"
+source "$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/set_vars.sh"
 
-"$ROOT/sc-web/scripts/run_sc_web.sh" "$@"
+"${DM_ROOT_PATH}/sc-web/scripts/run_sc_web.sh" "$@"
