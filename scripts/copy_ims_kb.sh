@@ -1,22 +1,24 @@
 #!/bin/bash
-export LD_LIBRARY_PATH=../sc-machine/bin
-if [ ! -d "../ims.ostis.kb_copy" ]; then
-    mkdir ../ims.ostis.kb_copy
+set -eo pipefail
+ROOT="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/.."
+export LD_LIBRARY_PATH="$ROOT"/sc-machine/bin
+if [ ! -d "$ROOT/ims.ostis.kb_copy" ]; then
+    mkdir "$ROOT"/ims.ostis.kb_copy
 else
-    rm -rf ../ims.ostis.kb_copy/*
+    rm -rf "$ROOT"/ims.ostis.kb_copy/*
 fi
 
-cd ../
+cd "$ROOT"
 
-cp -a ims.ostis.kb/ims/ostis_tech/semantic_network_represent/ ims.ostis.kb_copy/
-cp -a ims.ostis.kb/ims/ostis_tech/unificated_models/ ims.ostis.kb_copy/
-cp -a ims.ostis.kb/ims/ostis_tech/semantic_networks_processing/ ims.ostis.kb_copy/
-cp -a ims.ostis.kb/ims/ostis_tech/lib_ostis/sectn_lib_of_reusable_comp_ui/ui_menu/ ims.ostis.kb_copy/
-cp -a ims.ostis.kb/to_check/ ims.ostis.kb_copy/
-cp -a ims.ostis.kb/ui/ ims.ostis.kb_copy/
-rm -rf ims.ostis.kb_copy/ui/menu
+cp -a "$ROOT"/ims.ostis.kb/ims/ostis_tech/semantic_network_represent/ "$ROOT"/ims.ostis.kb_copy/
+cp -a "$ROOT"/ims.ostis.kb/ims/ostis_tech/unificated_models/ "$ROOT"/ims.ostis.kb_copy/
+cp -a "$ROOT"/ims.ostis.kb/ims/ostis_tech/semantic_networks_processing/ "$ROOT"/ims.ostis.kb_copy/
+cp -a "$ROOT"/ims.ostis.kb/ims/ostis_tech/lib_ostis/sectn_lib_of_reusable_comp_ui/ui_menu/ "$ROOT"/ims.ostis.kb_copy/
+cp -a "$ROOT"/ims.ostis.kb/to_check/ "$ROOT"/ims.ostis.kb_copy/
+cp -a "$ROOT"/ims.ostis.kb/ui/ "$ROOT"/ims.ostis.kb_copy/
+rm -rf "$ROOT"/ims.ostis.kb_copy/ui/menu
 
-cd -
+cd "$ROOT"/scripts
 
 
 

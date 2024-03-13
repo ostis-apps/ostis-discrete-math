@@ -1,4 +1,6 @@
 #!/bin/bash
+set -eo pipefail
+ROOT="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/.."
 
 green="\e[0;32m"
 rst="\e[0m"     # Text reset
@@ -10,13 +12,13 @@ prepare()
 
 prepare "Update web component"
 
-cd ../sc-web/
+cd "$ROOT"/sc-web/
 grunt build
-cd ../gt-ostis-drawings
+cd "$ROOT"/gt-ostis-drawings
 grunt build
-cd ../set-ostis-drawings
+cd "$ROOT"/set-ostis-drawings
 grunt build
-cd ../web-scn-editor/
+cd "$ROOT"/web-scn-editor/
 grunt build
 grunt exec:renewComponentsHtml
-cd ../scripts
+cd "$ROOT"/scripts
