@@ -17,8 +17,8 @@
 Download and build project
 
 ```sh
-git clone https://github.com/ostis-apps/gt.ostis
-cd gt.ostis/scripts 
+git clone git@github.com:kilativ-dotcom/ostis-discrete-math.git
+cd ostis-discrete-math/scripts 
 ./prepare.sh     
 
 ```
