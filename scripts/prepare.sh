@@ -41,7 +41,7 @@ stage "Clone projects"
 clone_project https://github.com/ostis-ai/sc-machine.git sc-machine main 02b6eb20edefca4e1c1b0c468fc0e8e28fc8194e
 clone_project https://github.com/ostis-ai/sc-web.git sc-web main
 clone_project https://github.com/ostis-ai/ims.ostis.kb.git ims.ostis.kb main
-clone_project https://github.com/ostis-apps/gt-ostis-drawings.git gt-ostis-drawings master
+clone_project https://github.com/ostis-apps/gt-ostis-drawings.git gt-ostis-drawings update-2024
 clone_project https://github.com/ostis-apps/set-ostis-drawings set-ostis-drawings master
 clone_project https://github.com/ostis-apps/gt-knowledge-processing-machine.git kb/graph_theory/gt-knowledge-processing-machine 0.8.0_fix
 clone_project https://github.com/ostis-apps/gt-knowledge-base.git kb/graph_theory/gt-knowledge-base 0.8.0
