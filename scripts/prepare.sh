@@ -38,7 +38,7 @@ clone_project()
 
 stage "Clone projects"
 
-clone_project https://github.com/ostis-ai/sc-machine.git sc-machine main 02b6eb20edefca4e1c1b0c468fc0e8e28fc8194e
+clone_project https://github.com/ostis-ai/sc-machine.git sc-machine main
 clone_project https://github.com/ostis-ai/sc-web.git sc-web main
 clone_project https://github.com/ostis-ai/ims.ostis.kb.git ims.ostis.kb main
 clone_project https://github.com/ostis-apps/gt-ostis-drawings.git gt-ostis-drawings update-2024
@@ -57,9 +57,9 @@ prepare()
 
 prepare "sc-machine"
 cd "$ROOT"/sc-machine/scripts
-./install_dependencies.sh
+./install_dependencies.sh --dev
 
-./make_all.sh
+./build_sc_machine.sh
 cd "$ROOT"
 
 prepare "sc-web"
