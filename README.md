@@ -23,19 +23,27 @@ cd gt.ostis/scripts
 
 ```
 
+Build knowledge base
+
+```sh
+cd scripts 
+./build_kb.sh 
+
+```
+
 Start project
 
 ```sh
-cd gt.ostis/scripts 
-./restart_sctp.sh 
+cd scripts 
+./run_sc_server.sh 
 
 ```
 
 Start web-server
 
 ```sh
-cd gt.ostis/scripts 
-./run_scweb.sh   
+cd scripts 
+./run_sc_web.sh   
 
 ```
 
