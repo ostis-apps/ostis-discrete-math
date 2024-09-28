@@ -38,17 +38,17 @@ export IMS_KB_PATH="${PLATFORM_PATH}/kb/ims.ostis.kb"
 
 export GRAPH_THEORY_KB_REPO="https://github.com/ostis-apps/gt-knowledge-base.git"
 export GRAPH_THEORY_KB_BRANCH="master"
-export GRAPH_THEORY_KB_COMMIT="191912aca62dd7ee04df1ecc872b00f07ba1121f"
+export GRAPH_THEORY_KB_COMMIT="b61a76d0f5eff5c25b0a1c3e3b41ff4cddaee3e2"
 export GRAPH_THEORY_KB_PATH="${PLATFORM_PATH}/kb/gt-knowledge-base"
 
 export GRAPH_THEORY_PS_REPO="https://github.com/ostis-apps/gt-knowledge-processing-machine.git"
 export GRAPH_THEORY_PS_BRANCH="master"
-export GRAPH_THEORY_PS_COMMIT="391402d755c2be0084cf3ef5d1faa5dbaab1b787"
+export GRAPH_THEORY_PS_COMMIT="0e995e82ee62449b71647f71378502e7541ec877"
 export GRAPH_THEORY_PS_PATH="${PLATFORM_PATH}/kb/gt-knowledge-processing-machine"
 
 export SET_THEORY_REPO="https://github.com/ostis-apps/set-theory.git"
 export SET_THEORY_BRANCH="master"
-export SET_THEORY_COMMIT="7114369acab0544ed9423a55d3d0df237dd870ac"
+export SET_THEORY_COMMIT="fd2f758ceadd7d0aa402aba8c30d02e51e41c882"
 export SET_THEORY_PATH="${PLATFORM_PATH}/kb/set-theory"
 
 export REPO_PATH_FILE="${DM_ROOT_PATH}/repo.path"

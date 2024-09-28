@@ -7,4 +7,4 @@ source "$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)/set_vars
 "${PLATFORM_PATH}/scripts/build_sc_component_manager.sh"
 "${PLATFORM_PATH}/scripts/build_sc_web.sh"
 
-echo "submodules were built successfully installed"
+echo "submodules were built successfully"
