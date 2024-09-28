@@ -13,6 +13,8 @@ ostis-web-platform/kb/ims.ostis.kb/ui
 ostis-web-platform/kb/gt-knowledge-base
 ostis-web-platform/kb/gt-knowledge-processing-machine
 ostis-web-platform/kb/set-theory
+!ostis-web-platform/kb/set-theory/set_theory_ui/menu/ui_start_sc_element.scs
+!ostis-web-platform/kb/set-theory/set_theory_ui/menu/ui_main_menu.scs
 
 # components
 ostis-web-platform/interface/sc-web/components/scg/kb
