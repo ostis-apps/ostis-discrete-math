@@ -13,27 +13,27 @@ export PLATFORM_SUBMODULE_SCRIPTS_PATH="${DM_ROOT_PATH}/ostis-web-platform/scrip
 
 export SC_MACHINE_REPO="https://github.com/ostis-ai/sc-machine.git"
 export SC_MACHINE_BRANCH="main"
-export SC_MACHINE_COMMIT=""
+export SC_MACHINE_COMMIT="ba8f336524dd908d0d4295d5f04fbdac79b16267"
 export SC_MACHINE_PATH="${PLATFORM_PATH}/sc-machine"
 
-export SCP_MACHINE_REPO="https://github.com/kilativ-dotcom/scp-machine.git"
-export SCP_MACHINE_BRANCH="feat/remove_codegen"
-export SCP_MACHINE_COMMIT=""
+export SCP_MACHINE_REPO="https://github.com/ostis-ai/scp-machine.git"
+export SCP_MACHINE_BRANCH="main"
+export SCP_MACHINE_COMMIT="bba3112f5e036471dabec02853caa4628cf10653"
 export SCP_MACHINE_PATH="${PLATFORM_PATH}/scp-machine"
 
-export SC_COMPONENT_MANAGER_REPO="https://github.com/kilativ-dotcom/sc-component-manager.git"
-export SC_COMPONENT_MANAGER_BRANCH="refactor/remove_codegen"
-export SC_COMPONENT_MANAGER_COMMIT=""
+export SC_COMPONENT_MANAGER_REPO="https://github.com/ostis-ai/sc-component-manager.git"
+export SC_COMPONENT_MANAGER_BRANCH="main"
+export SC_COMPONENT_MANAGER_COMMIT="05fc563cb54f815868feba564c3b480c0d1e2067"
 export SC_COMPONENT_MANAGER_PATH="${PLATFORM_PATH}/sc-component-manager"
 
-export SC_WEB_REPO="https://github.com/ostis-ai/sc-web.git"
-export SC_WEB_BRANCH="main"
-export SC_WEB_COMMIT=""
+export SC_WEB_REPO="https://github.com/NikitaZotov/sc-web.git"
+export SC_WEB_BRANCH="feat/harmonise_sc_types"
+export SC_WEB_COMMIT="b0f5232707617518448b4a865aa3a562425f575a"
 export SC_WEB_PATH="${PLATFORM_PATH}/interface/sc-web"
 
 export IMS_KB_REPO="https://github.com/ostis-ai/ims.ostis.kb.git"
 export IMS_KB_BRANCH="main"
-export IMS_KB_COMMIT=""
+export IMS_KB_COMMIT="cf3f112aaa0383863443f39fde8e4895d3264451"
 export IMS_KB_PATH="${PLATFORM_PATH}/kb/ims.ostis.kb"
 
 export GRAPH_THEORY_KB_REPO="https://github.com/ostis-apps/gt-knowledge-base.git"
@@ -43,7 +43,7 @@ export GRAPH_THEORY_KB_PATH="${PLATFORM_PATH}/kb/gt-knowledge-base"
 
 export GRAPH_THEORY_PS_REPO="https://github.com/ostis-apps/gt-knowledge-processing-machine.git"
 export GRAPH_THEORY_PS_BRANCH="master"
-export GRAPH_THEORY_PS_COMMIT="0e995e82ee62449b71647f71378502e7541ec877"
+export GRAPH_THEORY_PS_COMMIT="c326338f4d3cc5a529862be9e8868249d7a9f5c7"
 export GRAPH_THEORY_PS_PATH="${PLATFORM_PATH}/kb/gt-knowledge-processing-machine"
 
 export SET_THEORY_REPO="https://github.com/ostis-apps/set-theory.git"
