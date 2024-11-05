@@ -1,16 +1,20 @@
 # common
-ims.ostis.kb/ims/ostis_tech/semantic_network_represent
-ims.ostis.kb/ims/ostis_tech/unificated_models
-ims.ostis.kb/ims/ostis_tech/semantic_networks_processing
-ims.ostis.kb/ims/ostis_tech/lib_ostis/sectn_lib_of_reusable_comp_ui/ui_menu
-ims.ostis.kb/to_check
-ims.ostis.kb/ui
+ostis-web-platform/kb/ims.ostis.kb/ims/ostis_tech/semantic_network_represent
+ostis-web-platform/kb/ims.ostis.kb/ims/ostis_tech/unificated_models
+ostis-web-platform/kb/ims.ostis.kb/ims/ostis_tech/semantic_networks_processing
+ostis-web-platform/kb/ims.ostis.kb/ims/ostis_tech/lib_ostis/sectn_lib_of_reusable_comp_ui/ui_menu
+ostis-web-platform/kb/ims.ostis.kb/to_check
+ostis-web-platform/kb/ims.ostis.kb/ui
 
-!ims.ostis.kb/ui/menu
-!ims.ostis.kb/ui/ui_start_sc_element.scs
+!ostis-web-platform/kb/ims.ostis.kb/ui/menu
+!ostis-web-platform/kb/ims.ostis.kb/ui/ui_start_sc_element.scs
 
 # private
-kb
+ostis-web-platform/kb/gt-knowledge-base
+ostis-web-platform/kb/gt-knowledge-processing-machine
+ostis-web-platform/kb/set-theory
+!ostis-web-platform/kb/set-theory/set_theory_ui/menu/ui_start_sc_element.scs
+!ostis-web-platform/kb/set-theory/set_theory_ui/menu/ui_main_menu.scs
 
 # components
-sc-web/components/scg/kb
+ostis-web-platform/interface/sc-web/components/scg/kb
