@@ -26,9 +26,9 @@ export SC_COMPONENT_MANAGER_BRANCH="main"
 export SC_COMPONENT_MANAGER_COMMIT="05fc563cb54f815868feba564c3b480c0d1e2067"
 export SC_COMPONENT_MANAGER_PATH="${PLATFORM_PATH}/sc-component-manager"
 
-export SC_WEB_REPO="https://github.com/NikitaZotov/sc-web.git"
-export SC_WEB_BRANCH="feat/harmonise_sc_types"
-export SC_WEB_COMMIT="b0f5232707617518448b4a865aa3a562425f575a"
+export SC_WEB_REPO="https://github.com/ostis-ai/sc-web.git"
+export SC_WEB_BRANCH="main"
+export SC_WEB_COMMIT="527a7a728e7d547f480dd106763c1d66a625fad6"
 export SC_WEB_PATH="${PLATFORM_PATH}/interface/sc-web"
 
 export IMS_KB_REPO="https://github.com/ostis-ai/ims.ostis.kb.git"
