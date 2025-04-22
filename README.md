@@ -14,11 +14,55 @@
 
 ## Installation
 
-Download and build project
+Download project
 
 ```sh
 git clone https://github.com/ostis-apps/ostis-discrete-math.git
 cd ostis-discrete-math/scripts 
+./install.sh     
+
+```
+
+Install pipx using [**pipx installation guide**](https://pipx.pypa.io/stable/installation/) if not already installed.
+
+Ensure you are using **CMake version 3.24** or newer. Verify your version with:
+
+```sh
+cmake --version
+```
+
+To upgrade CMake, run:
+
+```sh
+# Use pipx to install cmake if not already installed
+pipx install cmake
+pipx ensurepath
+# relaunch your shell after installation
+exec $SHELL
+```
+
+Install Ninja generator for CMake, to use sc-machine CMake presets:
+```sh
+# Use pipx to install ninja if not already installed
+pipx install ninja
+pipx ensurepath
+# relaunch your shell after installation
+exec $SHELL
+```
+
+Install Conan, to build project with Conan-provided dependencies:
+
+```sh
+# Use pipx to install conan if not already installed
+pipx install conan
+pipx ensurepath
+# relaunch your shell after installation
+exec $SHELL
+```
+
+Install and build submodules:
+
+```sh
 ./install.sh     
 
 ```
