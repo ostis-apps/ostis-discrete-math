@@ -16,9 +16,9 @@ export SC_MACHINE_BRANCH="main"
 export SC_MACHINE_COMMIT="24bebbffabacdb29ebcce9aa621aa23fe8bb504a"
 export SC_MACHINE_PATH="${PLATFORM_PATH}/sc-machine"
 
-export SCP_MACHINE_REPO="https://github.com/ostis-ai/scp-machine.git"
-export SCP_MACHINE_BRANCH="main"
-export SCP_MACHINE_COMMIT="f5408a8379e2af3615a54cee003b6b326e7333df"
+export SCP_MACHINE_REPO="https://github.com/kilativ-dotcom/scp-machine.git"
+export SCP_MACHINE_BRANCH="feat/increase_default_wait_time"
+export SCP_MACHINE_COMMIT="f045854e848a741dcd783dc5a81947f3f46f987c"
 export SCP_MACHINE_PATH="${PLATFORM_PATH}/scp-machine"
 
 export SC_COMPONENT_MANAGER_REPO="https://github.com/ostis-ai/sc-component-manager.git"
@@ -38,7 +38,7 @@ export IMS_KB_PATH="${PLATFORM_PATH}/kb/ims.ostis.kb"
 
 export GRAPH_THEORY_KB_REPO="https://github.com/ostis-apps/gt-knowledge-base.git"
 export GRAPH_THEORY_KB_BRANCH="master"
-export GRAPH_THEORY_KB_COMMIT="b61a76d0f5eff5c25b0a1c3e3b41ff4cddaee3e2"
+export GRAPH_THEORY_KB_COMMIT="ac711912930b0e8d2a737a94c873637cce2631b3"
 export GRAPH_THEORY_KB_PATH="${PLATFORM_PATH}/kb/gt-knowledge-base"
 
 export GRAPH_THEORY_PS_REPO="https://github.com/ostis-apps/gt-knowledge-processing-machine.git"
