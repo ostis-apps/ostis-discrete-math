@@ -14,7 +14,6 @@ if [ -n "${PLATFORM_COMMIT}" ]
 fi
 
 "${DM_SCRIPTS_PATH}/install_submodules.sh"
-"${DM_SCRIPTS_PATH}/install_dependencies.sh"
 "${DM_SCRIPTS_PATH}/build_submodules.sh"
 "${DM_SCRIPTS_PATH}/build_kb.sh"
 
