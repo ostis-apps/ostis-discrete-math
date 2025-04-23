@@ -18,8 +18,7 @@ Download project
 
 ```sh
 git clone https://github.com/ostis-apps/ostis-discrete-math.git
-cd ostis-discrete-math/scripts 
-./install.sh     
+cd ostis-discrete-math/scripts
 
 ```
 
