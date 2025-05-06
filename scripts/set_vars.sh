@@ -48,7 +48,7 @@ export GRAPH_THEORY_PS_PATH="${PLATFORM_PATH}/kb/gt-knowledge-processing-machine
 
 export SET_THEORY_REPO="https://github.com/ostis-apps/set-theory.git"
 export SET_THEORY_BRANCH="master"
-export SET_THEORY_COMMIT="fd2f758ceadd7d0aa402aba8c30d02e51e41c882"
+export SET_THEORY_COMMIT="d41614835745757b61eddafb4ad53e9a1337ccdc"
 export SET_THEORY_PATH="${PLATFORM_PATH}/kb/set-theory"
 
 export REPO_PATH_FILE="${DM_ROOT_PATH}/repo.path"
