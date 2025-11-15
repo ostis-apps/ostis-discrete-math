@@ -1,0 +1,27 @@
+sc_node_class
+    -> action;
+    -> action_initiated;
+    -> cocept_user;;
+
+sc_node_non_role_relation
+    -> nrel_username;
+    -> nrel_hahsedd_password;;
+
+sc_node_role_relation
+    -> rrel_1;
+    -> rrel_2;;
+
+@username = [Username_1&2];;
+@password = [password_1];;
+@hashed_password = [38c5ae2bcd1f12aa269e45ae8c8762f030630a5137dd6d1c799c019626f33096];;
+
+test_user_1
+    <- concept_user;
+    => nrel_username: @username;
+    => nrel_hashed_password: @hashed_password;;
+
+test_action
+    <- action;
+    <- action_register_user;
+    -> rrel_1: @username;
+    -> rrel_2: @password;;

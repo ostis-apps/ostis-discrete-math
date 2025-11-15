@@ -11,6 +11,7 @@ class ostis_discrete_mathRecipe(ConanFile):
 
     def requirements(self):
         self.requires("sc-machine/0.10.0")
+        self.requires("openssl/3.2.1")
 
     def build_requirements(self):
         self.test_requires("gtest/1.14.0")

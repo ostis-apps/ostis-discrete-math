@@ -57,4 +57,6 @@ message("Compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}, path:
 
 find_package(sc-machine REQUIRED)
 
+find_package(OpenSSL REQUIRED)
+
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/problem-solver)
