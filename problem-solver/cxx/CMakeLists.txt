@@ -1,3 +1,6 @@
 add_subdirectory(common-utils)
 add_subdirectory(example-module)
 add_subdirectory(authentication-module)
+add_subdirectory(add_section_to_set_module)
+add_subdirectory(check_student_answer_module)
+add_subdirectory(compare_structures_module)
